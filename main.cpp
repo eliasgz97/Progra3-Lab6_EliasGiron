@@ -72,7 +72,7 @@ int main()
                 cin >> acabado;
                 Pintura pintura(color, acabado);
                 produccion[contador][0]= new Carro(motor, chasis, pintura, nombre_modelo, numero_modelo);
-                carros.push_back(new Carro(motor, chasis, pintura, nombre_modelo, numero_modelo);
+                carros.push_back(new Carro(motor, chasis, pintura, nombre_modelo, numero_modelo));
                 contador++;
             } else 
             {
@@ -96,8 +96,9 @@ int main()
             {
                 for(int j = 0; j <=4; j++)
                 {
-                    if(j!=4 && produccion[i][j] != NULL){
+                    if(j!=4){
                         produccion[i][j] = produccion[i][j+1];
+                        produccion[i][0] = new Carro(produccion[i][0]->getNombre_modelo(), produccion[i][0]->getNumero_modelo(), produccion[i][0] -> getMotor(), produccion[i][0]->getChasis(), produccion[i][0]->getPintura());
                     } else {
                         
                     }
