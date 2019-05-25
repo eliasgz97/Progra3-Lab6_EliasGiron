@@ -35,7 +35,8 @@ int main()
     int opcion = 0, contador = 0, columnas = 0;
     string nombre_modelo, numero_modelo, tipo_motor, configuracion, rueda, transmision, color, acabado;
     Pintura pintura2;
-    Carro ***produccion = inicializar(produccion);
+    Carro ***produccion = NULL;
+    produccion = inicializar(produccion);
     vector <Carro*> carros;
     while (resp == 's' || resp == 'S')
     {
@@ -95,7 +96,7 @@ int main()
             {
                 for(int j = 0; j <=4; j++)
                 {
-                    if(j!=4){
+                    if(j!=4 && produccion[i][j] != NULL){
                         produccion[i][j] = produccion[i][j+1];
                     } else {
                         
